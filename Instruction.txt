@@ -1,0 +1,78 @@
+Note: The command npx create-react-app projectname is not required
+
+
+node server.js
+
+run in terminal
+
+then type http://localhost:5000/course
+to get the data from custom api
+when you change anything in server class you have to run the node server.js again
+
+
+
+Thunder Client extension VS code 
+
+Json Formatter Google Chrome extension
+
+ To install Express
+
+
+ ------------------------------------------------------
+1) when there is not pasckage.Json and to make server.js as default entry point
+
+ npm init
+ Then Enter Enter then
+ Enter Entry point: (server.js) 
+ OK 
+ Yes
+
+2) npm i express
+
+--------------------------------------------------------------------------------
+//May not work
+//Only one time, not for every project
+npm i -g nodemon
+
+package.Json
+Find "node server.js"
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js", //This is changed manually
+}
+
+npm run dev
+--------------------------------------------------------------------------------
+
+create a .env file
+then add
+PORT=5000
+without space
+
+npm i dotenv
+
+on the server.js file 
+
+require("dotenv).config();
+
+process.env.PORT
+
+--------------------------------------------------------------------------------
+
+
+MongoDB
+
+https://account.mongodb.com/account/register
+
+
+To connect use Driver and copy the Connection String 3rd in list 
+
+mongodb+srv://howtodo0147:<password>@cluster0.corsnmd.mongodb.net/?retryWrites=true&w=majority
+without <>
+change the password and Make a variable in env with actual password
+
+npm i mongoose
+
+-----------------------------------------------------------------------------
