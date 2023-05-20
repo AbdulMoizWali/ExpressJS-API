@@ -1,10 +1,23 @@
 const mongoose = require("mongoose");
 
+
 const StudentSchema = new mongoose.Schema({
-    text:{
+    firstName:{
         type:String,
         required: true,
     },
+    lastName:{
+        type:String,
+        required: true,
+    },
+    contact:{
+        type:String,
+        required: true,
+    },
+    course:{
+        type:String,
+        required: true,
+    }
 });
 
 const StudentModel = mongoose.model('student', StudentSchema);
