@@ -28,7 +28,7 @@ route.get("/:id", (req, res) => {
 });
 
 route.post("/", async (req, res) => {
-    let { firstName, lastName, contact, course } = req.query
+    let { firstName, lastName, contact, course } = req.body
     try {
 
         let errArr = []
