@@ -20,7 +20,7 @@ route.get("/", async (req, res) => {
 });
 
 route.get("/:id", (req, res) => {
-    res.send("Get Single Student Data");
+    res.send("Get Single Teacher Data");
 });
 
 route.post("/", async (req, res) => {
@@ -44,15 +44,15 @@ route.post("/", async (req, res) => {
 
         }
         else {
-            let obj = { firstName, lastName, contact, email, password }
-            let Student = new studentModel(obj)
-            await Student.save()
-            if (!Student) {
+            let obj = { name, contact, course }
+            let Teacher = new teacherModel(obj)
+            await Teacher.save()
+            if (!Teacher) {
                 res.send(sendResponse(false, null, "internal Server Error")).status(400);
 
             }
             else {
-                res.send(sendResponse(true, Student, "Saved Successfully")).status(200);
+                res.send(sendResponse(true, Teacher, "Saved Successfully")).status(200);
             }
         }
     } catch (e) {
@@ -62,11 +62,11 @@ route.post("/", async (req, res) => {
 });
 
 route.put("/:id", (req, res) => {
-    res.send("Edit Student Data");
+    res.send("Edit Teacher Data");
 });
 
 route.delete("/:id", (req, res) => {
-    res.send("Delete Student Data");
+    res.send("Delete Teacher Data");
 });
 
 module.exports = route;
