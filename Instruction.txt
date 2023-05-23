@@ -30,7 +30,6 @@ Json Formatter Google Chrome extension
 2) npm i express
 
 --------------------------------------------------------------------------------
-//May not work
 //Only one time, not for every project
 npm i nodemon
 

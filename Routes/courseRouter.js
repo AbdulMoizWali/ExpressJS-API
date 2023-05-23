@@ -20,7 +20,7 @@ route.get("/", async (req, res) => {
 });
 
 route.get("/:id", (req, res) => {
-    // res.send("Get Single Student Data");
+    // res.send("Get Single Course Data");
     // try{
 
     // }
@@ -51,14 +51,14 @@ route.post("/", async (req, res) => {
         }
         else {
             let obj = { name, duration, fees, shortName }
-            let Student = new studentModel(obj)
-            await Student.save()
-            if (!Student) {
+            let Course = new courseModel(obj)
+            await Course.save()
+            if (!Course) {
                 res.send(sendResponse(false, null, "internal Server Error")).status(400);
 
             }
             else {
-                res.send(sendResponse(true, Student, "Saved Successfully")).status(200);
+                res.send(sendResponse(true, Course, "Saved Successfully")).status(200);
             }
         }
     } catch (e) {
@@ -68,11 +68,11 @@ route.post("/", async (req, res) => {
 });
 
 route.put("/:id", (req, res) => {
-    res.send("Edit Student Data");
+    res.send("Edit Course Data");
 });
 
 route.delete("/:id", (req, res) => {
-    res.send("Delete Student Data");
+    res.send("Delete Course Data");
 });
 
 module.exports = route;
