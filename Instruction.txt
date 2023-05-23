@@ -32,7 +32,7 @@ Json Formatter Google Chrome extension
 --------------------------------------------------------------------------------
 //May not work
 //Only one time, not for every project
-npm i -g nodemon
+npm i nodemon
 
 package.Json
 Find "node server.js"
