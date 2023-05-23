@@ -4,7 +4,6 @@ const studentModel = require("../Models/studentModel");
 const { sendResponse } = require("../Helper/helper");
 
 route.get("/", async (req, res) => {
-    // res.send("Get All Student Data");
     try{
         const result = await studentModel.find();
         if(!result){
@@ -28,7 +27,7 @@ route.get("/:id", (req, res) => {
 });
 
 route.post("/", async (req, res) => {
-    let { firstName, lastName, contact, course } = req.body
+    let { firstName, lastName, contact, email, password } = req.body
     try {
 
         let errArr = []
@@ -41,9 +40,11 @@ route.post("/", async (req, res) => {
         if (!contact) {
             errArr.push("Required : contact")
         }
-        if (!course) {
-            errArr.push("Required : course")
-
+        if (!email) {
+            errArr.push("Required : email")
+        }
+        if(!password){
+            errArr.push("Required : password");
         }
 
         if (errArr.length > 0) {
@@ -52,7 +53,7 @@ route.post("/", async (req, res) => {
 
         }
         else {
-            let obj = { firstName, lastName, contact, course }
+            let obj = { firstName, lastName, contact, email, password }
             let Student = new studentModel(obj)
             await Student.save()
             if (!Student) {
