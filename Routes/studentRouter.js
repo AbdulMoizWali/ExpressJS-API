@@ -126,14 +126,14 @@ route.delete("/:id", async (req, res) => {
 
 route.get('/search', async (req, res)=>{
     try{
-        let {firstName, lastName} =req.body;
+        let {firstName, lastName} = req.body;
         if(firstName){
             let result = await studentModel.find({firstName: firstName, lastName: lastName});
             if(!result){
                 res.send(sendResponse(false, null, "No Data Found")).status(404);
             }
             else{
-                    res.send(sendResponse(true, result)).status(200);
+                res.send(sendResponse(true, result)).status(200);
             }
         }
     }
